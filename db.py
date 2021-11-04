@@ -28,12 +28,12 @@ def view_unique_work():
     return data
 
 def get_data(work):
-    cursor.execute("SELECT * FROM workstable WHERE work=?"(work))
+    cursor.execute("SELECT * FROM workstable WHERE work='{}'".format(work))
     data = cursor.fetchall() 
     return data
 
 def update_data(new_work, new_work_status, new_work_due_date, work, work_status, work_due_date):
-    cursor.execute("UPDATE workstable SET work=%s, work_status=%s, task_due_date=%s WHERE work=%s and work_status=%s and task_due_date=%s", (new_work, new_work_status, new_work_due_date, work, work_status, work_due_date))
+    cursor.execute("UPDATE workstable SET work=?, work_status=?, work_due_date=? WHERE work=? and work_status=? and work_due_date=?", (new_work, new_work_status, new_work_due_date, work, work_status, work_due_date))
     conn.commit()
     data = cursor.fetchall() 
     return data
