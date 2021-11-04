@@ -39,18 +39,3 @@ def landpage():
           
     else:
         st.subheader("Check Me")
-
-    if choice == "Create":
-        st.subheader("Add Work")
-        
-    elif choice == "Read":
-        st.subheader("View My Work")
-
-    elif choice == "Update":
-        st.subheader ("Edit My Work")
-
-    elif choice == "Delete":
-        st.subheader ("Delete My Work")  
-          
-    else:
-        st.subheader("Check Me")
