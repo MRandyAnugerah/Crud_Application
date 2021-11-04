@@ -2,6 +2,7 @@ import streamlit as st
 from db import create_table
 from create import create_func
 from read import read_func
+from update import update_func
 
 def landpage():
     st.title("To Do App My Work")
@@ -18,7 +19,7 @@ def landpage():
         read_func()
 
     elif choice == "Update":
-        st.subheader ("Edit My Work")
+        update_func()
 
     elif choice == "Delete":
         st.subheader ("Delete My Work")  
