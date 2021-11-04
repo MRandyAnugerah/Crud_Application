@@ -1,13 +1,5 @@
 import streamlit as st
 import pandas as pd
-
-def landpage():
-    st.title("To Do App My Work")
-
-    menu = ["Create", "Read", "Update", "Delete", "About"]
-    choice = st.sidebar.selectbox("Menu", menu)
-import streamlit as st
-import pandas as pd
 from database import create_data, create_table
 
 def landpage():
