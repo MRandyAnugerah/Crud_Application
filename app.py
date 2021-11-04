@@ -1,7 +1,7 @@
 import streamlit as st
-import pandas as pd
 from db import create_table
 from create import create_func
+from read import read_func
 
 def landpage():
     st.title("To Do App My Work")
@@ -15,7 +15,7 @@ def landpage():
         create_func()
         
     elif choice == "Read":
-        st.subheader("View My Work")
+        read_func()
 
     elif choice == "Update":
         st.subheader ("Edit My Work")

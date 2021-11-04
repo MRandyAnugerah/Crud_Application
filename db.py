@@ -1,5 +1,5 @@
-# from app import landpage
 import mysql.connector
+from mysql.connector.fabric.connection import REPORT_ERRORS
 
 
 conn = mysql.connector.connect( host="localhost",
@@ -16,4 +16,9 @@ def create_table():
 def create_data(work, work_status, work_due_date):
     cursor.execute("INSERT INTO workstable(work, work_status, work_due_date) VALUES (%s,%s,%s)", (work, work_status, work_due_date))
     conn.commit()
+
+def view_my_work():
+    cursor.execute("SELECT * FROM workstable")
+    data = cursor.fetchall() #take all rows and return to a list of tuples
+    return data
 
