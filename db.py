@@ -14,7 +14,7 @@ def create_table():
     cursor.execute("CREATE TABLE IF NOT EXISTS workstable(work TEXT, work_status TEXT, work_due_date DATE)")
 
 def create_data(work, work_status, work_due_date):
-    cursor.execute("INSERT INTO workstable(work, work_status, work_due_date) VALUES (%s,%s,%s)", (work, work_status, work_due_date))
+    cursor.execute("INSERT INTO workstable(work, work_status, work_due_date) VALUES ('{}','{}','{}')".format(work, work_status, work_due_date))
     conn.commit()
 
 def view_my_work():
@@ -33,7 +33,9 @@ def get_data(work):
     return data
 
 def update_data(new_work, new_work_status, new_work_due_date, work, work_status, work_due_date):
-    cursor.execute("UPDATE workstable SET work=?, work_status=?, work_due_date=? WHERE work=? and work_status=? and work_due_date=?", (new_work, new_work_status, new_work_due_date, work, work_status, work_due_date))
+    cursor.execute("UPDATE workstable SET work='{}', work_status='{}', work_due_date='{}' WHERE work='{}' and work_status='{}' and work_due_date='{}'".format(new_work, new_work_status, new_work_due_date, work, work_status, work_due_date))
     conn.commit()
-    data = cursor.fetchall() 
-    return data
+
+def delete_work(work):
+    cursor.execute("DELETE FROM workstable WHERE work='{}'".format(work))
+    conn.commit()
