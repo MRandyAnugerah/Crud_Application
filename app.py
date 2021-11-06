@@ -4,6 +4,7 @@ from create import create_func
 from read import read_func
 from update import update_func
 from delete import delete_func
+from about import about_func
 
 def landpage():
     st.title("To Do App My Work")
@@ -26,5 +27,5 @@ def landpage():
         delete_func()
           
     else:
-        st.subheader("Check Me")
+        about_func()
      
