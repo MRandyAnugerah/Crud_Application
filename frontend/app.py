@@ -1,10 +1,10 @@
 import streamlit as st
-from db import create_table, delete_work
-from create import create_func
-from read import read_func
-from update import update_func
-from delete import delete_func
-from about import about_func
+from backend.db import create_table
+from frontend.create import create_func
+from frontend.read import read_func
+from frontend.update import update_func
+from frontend.delete import delete_func
+from frontend.about import about_func
 
 def landpage():
     st.title("To Do App My Work")

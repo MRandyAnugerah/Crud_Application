@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  # ini-mysql:
+  #   image: mysql:latest
+  #   ports:
+  #     - 3306:3306
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD: rahasia 
+  #     - MYSQL_DATABASE: crud
+  #     - MYSQL_USER: root
+  #     - MYSQL_PASSWORD: user
+  #   volumes:
+  #     - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  ini-main:
+    image: main:1.1
+    ports:
+      - 8082:8080
+      
+  ini-backend:
+    # build: ./backend
+    image: crud_application_ini-backend:1.1
+    ports:
+      - 8081:8080
+      
+  ini-frontend:
+    # build: ./frontend
+    image: crud_application_ini-frontend:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - ini-backend

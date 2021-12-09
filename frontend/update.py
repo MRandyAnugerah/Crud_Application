@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from db import view_my_work, get_data, view_unique_work, update_data
+from backend.db import view_my_work, get_data, view_unique_work, update_data
 
 def update_func():
     st.subheader("Update Data")
