@@ -1,5 +1,5 @@
 import streamlit as st
-from db import create_data
+from backend.db import create_data
 
 def create_func():
     st.subheader("Add Work")

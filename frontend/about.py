@@ -5,7 +5,7 @@ def about_func():
     st.subheader("About Me")
 
     col1,col2 = st.columns(2)
-    image = Image.open("a.jpeg")
+    image = Image.open("frontend/a.jpeg")
     col1.image(image,
                caption='M. Randy Anugerah',
                use_column_width=True

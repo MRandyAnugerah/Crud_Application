@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from db import delete_work, view_my_work, view_unique_work
+from backend.db import delete_work, view_my_work, view_unique_work
 
 def delete_func():
     st.subheader ("Delete My Work") 

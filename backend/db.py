@@ -1,7 +1,4 @@
 import mysql.connector
-from mysql.connector.fabric.connection import REPORT_ERRORS
-
-
 conn = mysql.connector.connect( host="localhost",
                                 port="3306",
                                 user="root",
